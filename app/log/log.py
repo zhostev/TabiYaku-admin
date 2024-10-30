@@ -23,3 +23,10 @@ class Loggin:
 
 loggin = Loggin()
 logger = loggin.setup_logger()
+
+
+from loguru import logger
+
+logger.add("app.log", rotation="1 MB", retention="10 days", compression="zip")
+
+__all__ = ["logger"]
